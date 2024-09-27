@@ -18,7 +18,7 @@ except:
 
 
 #print data
-time.sleep(1)
+#time.sleep(1)
 print(json.dumps(data, indent=4))
 
 
@@ -28,6 +28,7 @@ completed_counts = {}  #store counts
 for person in data:
     #dict to store trainings
     recent_trainings = {}
+
 
     #iterate through each of their completions
     for completion in person["completions"]:
@@ -50,5 +51,4 @@ for person in data:
 #print completed counts
 print("\nNumber of people who completed each training:\n")
 for name in completed_counts:
-    formatted_name = format(name, ">40s")
-    print("\t", formatted_name, completed_counts[name],"\n")
+    print("\t" + name + ": " + str(completed_counts[name]),"\n")
