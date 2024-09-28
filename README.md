@@ -1,2 +1,2 @@
 # codingexercise
-For UIUC
+Coding exercise for UIUC screening.
