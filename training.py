@@ -11,8 +11,38 @@ month = 10
 year = 2023
 target_date = datetime(year, month, day)
 
+#name of default file
+filename = "trainings (correct).txt"
+
 print("\nWelcome to training.py")
 print("Created by Robert (Bobby) Impastato on 9/27/2024 for University of Illinois Urbana-Champaign code screening")
+
+
+while True:
+    filename = "trainings (correct).txt"
+    print("\nDefault file name:", filename)
+    choice = input("Would you like to use default file name? [Y/N]: ")
+    if choice == "N" or choice == "n":
+        try:
+            filename = input("Custom file name: ")
+            myfile = open(filename, 'r')
+            data = json.load(myfile)
+            print(f"Opened file {filename}")
+        except:
+            print(f"ERROR OPENING FILE {filename}!")
+            continue
+        break
+    elif choice == "Y" or choice == "y":
+        try:
+            myfile = open(filename, 'r')
+            data = json.load(myfile)
+            print(f"Opened file {filename}")
+        except:
+            print(f"ERROR OPENING FILE {filename}!")
+            continue
+        break
+    else:
+        print("ERROR: Enter Y or N")
 
 
 while True:
@@ -79,17 +109,6 @@ while True:
     else:
         print("ERROR: Enter Y or N")
 
-
-#name of file (edit if necessary)
-filename = "trainings (correct).txt"
-
-#Load JSON
-try:
-    myfile = open(filename, 'r')
-    data = json.load(myfile)
-    print(f"Opened file {filename}")
-except:
-    print("ERROR OPENING FILE! (Program assumes file is in same repository and named 'trainings (correct).txt'")
 
 
 completed_counts = {}  #store counts
