@@ -1,21 +1,17 @@
 import os
 import json
-import time
-#assume data file is in same repo
-import json
-from datetime import datetime, timedelta  # Ensure timedelta is imported
+from datetime import datetime, timedelta
 
+#Default parameters as specified by email
 trainings_input = ["Electrical Safety for Labs", "X-Ray Safety", "Laboratory Safety Training"]
-
 fiscal_year_input = 2024
-
 target_date = datetime(2023, 10, 1)
-
 day = 1
 month = 10
-year = 2024
+year = 2023
+target_date = datetime(year, month, day)
 
-print("Welcome to training.py")
+print("\nWelcome to training.py")
 print("Created by Robert (Bobby) Impastato on 9/27/2024 for University of Illinois Urbana-Champaign code screening")
 
 
@@ -213,3 +209,16 @@ for person, trainings in expired_or_expiringsoon.items():
     print(f"{person}:")
     for training_info in trainings:
         print(f"      {training_info['training']} ({training_info['status']})")
+
+#Save results to JSON
+with open('completed_counts.json', 'w') as f:
+    json.dump(completed_counts, f, indent=4)
+    print("\nSaved counts to completed_counts.json")
+
+with open('people_completed_trainings.json', 'w') as f:
+    json.dump(people_completetrainings, f, indent=4)
+    print("Saved specified trainings completions to people_completed_trainings.json")
+
+with open('expired_or_expiring_soon.json', 'w') as f:
+    json.dump(expired_or_expiringsoon, f, indent=4)
+    print("Saved people with expired or expiring soon trainings to expired_or_expiring_soon.json")
