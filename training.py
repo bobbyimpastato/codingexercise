@@ -92,11 +92,6 @@ except:
     print("ERROR OPENING FILE! (Program assumes file is in same repository and named 'trainings (correct).txt'")
 
 
-#print data
-#time.sleep(1)
-#print(json.dumps(data, indent=4))
-
-
 completed_counts = {}  #store counts
 
 #we iterate through each item (person) in the data
