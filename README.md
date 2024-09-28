@@ -1,6 +1,6 @@
 # training.py
 
-Created by **Robert (Bobby) Impastato** on 9/27/2024 for University of Illinois Urbana-Champaign code screening.
+Created by [**Robert (Bobby) Impastato**](https://github.com/bobbyimpastato) on 9/27/2024 for University of Illinois Urbana-Champaign code screening.
 
 ## Usage
 
